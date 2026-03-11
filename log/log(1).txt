@@ -1,0 +1,51 @@
+2026-03-06 14:21:54,835 - INFO - Namespace(model='meta-llama/Llama-2-7b-hf', batch_size=1, output_dir='./drive/MyDrive/FYP/log', act_scales='/content/drive/MyDrive/FYP/Quantization/quant_stats/act_scales/Llama-2-7b.pt', act_shifts='/content/drive/MyDrive/FYP/Quantization/quant_stats/act_shifts/Llama-2-7b.pt', nsamples=32, epochs=8, let=True, resume=None, save_dir='./drive/MyDrive/FYP/save', cache_dir='./drive/MyDrive/FYP/cache', lr_plus=True, let_lr=5e-05, lwc_lr=0.01, wd=0.0, weight_quant_params={'n_bits': 8, 'per_channel_axes': [0], 'symmetric': True, 'dynamic_method': 'per_token', 'group_size': None, 'lwc': True}, act_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': True, 'dynamic_method': 'per_token'}, q_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': True, 'dynamic_method': 'per_token'}, k_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': True, 'dynamic_method': 'per_token'}, v_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': True, 'dynamic_method': 'per_token'}, p_quant_params={'n_bits': 16})
+2026-03-06 14:21:55,015 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:55,116 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:55,212 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:55,306 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:55,409 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-06 14:21:55,503 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-06 14:21:55,971 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:57,377 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/generation_config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:57,518 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:57,622 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:57,637 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-06 14:21:57,737 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:57,832 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-06 14:21:58,077 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-06 14:21:58,188 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:58,284 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 200 OK"
+2026-03-06 14:21:58,379 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:58,467 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-06 14:21:58,618 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-06 14:21:58,738 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:58,833 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-06 14:21:58,928 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:59,020 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-06 14:21:59,122 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:59,224 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-06 14:21:59,316 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-03-06 14:21:59,409 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-06 14:21:59,605 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:59,703 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:59,801 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-06 14:21:59,896 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-06 14:21:59,989 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-06 14:22:38,063 - INFO - Starting ...
+2026-03-06 14:22:43,540 - INFO - No attention mask captured, creating default dummy mask.
+2026-03-06 14:22:43,553 - INFO - Processing Layer 0...
+2026-03-06 14:22:59,186 - INFO - layer 0 iter 0 loss:0.00969450082629919 norm:nan max memory_allocated 6026.8193359375 
+2026-03-06 14:23:10,973 - INFO - layer 0 iter 1 loss:0.03354231268167496 norm:nan max memory_allocated 6026.8193359375 
+2026-03-06 14:23:22,834 - INFO - layer 0 iter 2 loss:0.07227502763271332 norm:nan max memory_allocated 6026.8193359375 
+2026-03-06 14:23:34,761 - INFO - layer 0 iter 3 loss:0.12892580032348633 norm:nan max memory_allocated 6026.8193359375 
+2026-03-06 14:23:46,775 - INFO - layer 0 iter 4 loss:0.20703253149986267 norm:nan max memory_allocated 6026.8203125 
+2026-03-06 14:23:58,894 - INFO - layer 0 iter 5 loss:0.29459095001220703 norm:nan max memory_allocated 6026.8203125 
+2026-03-06 14:24:11,364 - INFO - layer 0 iter 6 loss:0.37993761897087097 norm:nan max memory_allocated 6026.8203125 
+2026-03-06 14:24:24,540 - INFO - layer 0 iter 7 loss:0.45579826831817627 norm:nan max memory_allocated 6026.8203125 
+2026-03-06 14:24:27,767 - INFO - Processing Layer 1...
+2026-03-06 14:24:46,228 - INFO - layer 1 iter 0 loss:10.016142845153809 norm:nan max memory_allocated 6029.8095703125 
+2026-03-06 14:24:58,597 - INFO - layer 1 iter 1 loss:7.634099960327148 norm:nan max memory_allocated 6029.8125 
+2026-03-06 14:25:10,911 - INFO - layer 1 iter 2 loss:7.178407669067383 norm:nan max memory_allocated 6029.8125 
+2026-03-06 14:25:23,201 - INFO - layer 1 iter 3 loss:7.518284797668457 norm:nan max memory_allocated 6029.8125 
+2026-03-06 14:25:33,752 - INFO - Loss is NAN, stopping training
+2026-03-06 14:29:13,131 - INFO - Loss is NAN, stopping training
