@@ -1417,3 +1417,602 @@
 2026-03-11 13:20:05,038 - INFO - layer 31 iter 7 loss:1.9772453308105469 norm:0.10458022356033325 max memory_allocated 9968.599609375 
 2026-03-11 13:20:19,555 - INFO - layer 31 iter 8 loss:1.9763903617858887 norm:0.17297403514385223 max memory_allocated 9968.599609375 
 2026-03-11 13:20:34,097 - INFO - layer 31 iter 9 loss:1.9771548509597778 norm:0.16107219457626343 max memory_allocated 9968.599609375 
+2026-03-12 11:14:02,748 - INFO - Namespace(model='meta-llama/Llama-2-7b-hf', batch_size=1, output_dir='../log', act_scales='../quant_stats_modified/act_scales/Llama-2-7b.pt', act_shifts='../quant_stats_modified/act_shifts/Llama-2-7b.pt', nsamples=68, epochs=10, let=True, resume=None, save_dir='../save_dir', cache_dir='../cache', lr_plus=True, let_lr=0.005, lwc_lr=0.01, wd=0.0, weight_quant_params={'n_bits': 8, 'per_channel_axes': [0], 'symmetric': True, 'dynamic_method': 'per_token', 'group_size': 128, 'lwc': True}, act_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'}, q_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'}, k_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'}, v_quant_params={'n_bits': 8, 'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'}, p_quant_params={'n_bits': 16, 'metric': 'fix0to1'})
+2026-03-12 11:14:09,265 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-12 11:14:09,575 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-12 11:14:09,826 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-12 11:14:10,099 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-12 11:14:10,365 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-12 11:14:11,596 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/generation_config.json "HTTP/1.1 200 OK"
+2026-03-12 11:14:46,568 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:46,806 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:46,848 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 11:14:47,124 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:47,369 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 11:14:48,263 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 11:14:48,543 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:48,783 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 200 OK"
+2026-03-12 11:14:49,034 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:49,276 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 11:14:51,852 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:52,114 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-12 11:14:52,360 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:52,606 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-12 11:14:52,879 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:53,120 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 11:14:53,370 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 11:14:53,637 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-12 11:14:54,007 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-12 11:14:54,256 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-12 11:14:54,503 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-12 11:14:54,778 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-12 11:17:12,652 - INFO - Starting ...
+2026-03-12 11:17:16,648 - INFO - No attention mask captured, creating default dummy mask.
+2026-03-12 11:17:16,660 - INFO - Processing Layer 0...
+2026-03-12 11:17:33,955 - INFO - layer 0 iter 0 loss:0.23973077535629272 norm:0.025409655645489693 max memory_allocated 5160.45556640625 
+2026-03-12 11:17:48,793 - INFO - layer 0 iter 1 loss:1.172428846359253 norm:0.17296722531318665 max memory_allocated 5160.45556640625 
+2026-03-12 11:18:03,980 - INFO - layer 0 iter 2 loss:1.9510266780853271 norm:0.9087181091308594 max memory_allocated 5160.45556640625 
+2026-03-12 11:18:18,906 - INFO - layer 0 iter 3 loss:2.1707561016082764 norm:1.3761647939682007 max memory_allocated 5160.45556640625 
+2026-03-12 11:18:33,883 - INFO - layer 0 iter 4 loss:2.0853021144866943 norm:1.6861915588378906 max memory_allocated 5160.45556640625 
+2026-03-12 11:18:48,617 - INFO - layer 0 iter 5 loss:2.0208044052124023 norm:1.9185744524002075 max memory_allocated 5160.45556640625 
+2026-03-12 11:19:03,538 - INFO - layer 0 iter 6 loss:2.0002942085266113 norm:1.8584094047546387 max memory_allocated 5160.45556640625 
+2026-03-12 11:19:18,730 - INFO - layer 0 iter 7 loss:1.9951926469802856 norm:1.8244783878326416 max memory_allocated 5160.45556640625 
+2026-03-12 11:19:33,679 - INFO - layer 0 iter 8 loss:1.9991096258163452 norm:1.993304967880249 max memory_allocated 5160.45556640625 
+2026-03-12 11:19:48,750 - INFO - layer 0 iter 9 loss:1.9974225759506226 norm:2.046365261077881 max memory_allocated 5160.45556640625 
+2026-03-12 11:19:50,494 - INFO - Layer 0 weight stats - mean: -0.0000, std: 0.0817, unique values: 900
+2026-03-12 11:19:50,957 - INFO - Processing Layer 1...
+2026-03-12 11:20:08,945 - INFO - layer 1 iter 0 loss:1.1847388744354248 norm:0.19604462385177612 max memory_allocated 5160.45556640625 
+2026-03-12 11:20:23,844 - INFO - layer 1 iter 1 loss:1.8661075830459595 norm:0.1897764801979065 max memory_allocated 5160.45556640625 
+2026-03-12 11:20:38,826 - INFO - layer 1 iter 2 loss:1.9475692510604858 norm:0.29029300808906555 max memory_allocated 5160.45556640625 
+2026-03-12 11:20:54,006 - INFO - layer 1 iter 3 loss:1.9354008436203003 norm:0.3642624616622925 max memory_allocated 5160.45556640625 
+2026-03-12 11:21:09,370 - INFO - layer 1 iter 4 loss:1.9268643856048584 norm:0.5583814382553101 max memory_allocated 5160.45556640625 
+2026-03-12 11:21:24,506 - INFO - layer 1 iter 5 loss:1.9163813591003418 norm:0.48508331179618835 max memory_allocated 5160.45556640625 
+2026-03-12 11:21:39,299 - INFO - layer 1 iter 6 loss:1.912829875946045 norm:0.36065399646759033 max memory_allocated 5160.45556640625 
+2026-03-12 11:21:54,043 - INFO - layer 1 iter 7 loss:1.912230372428894 norm:0.3465201258659363 max memory_allocated 5160.45556640625 
+2026-03-12 11:22:08,874 - INFO - layer 1 iter 8 loss:1.9120874404907227 norm:0.3278655707836151 max memory_allocated 5160.45556640625 
+2026-03-12 11:22:23,682 - INFO - layer 1 iter 9 loss:1.911881446838379 norm:0.30867570638656616 max memory_allocated 5160.45556640625 
+2026-03-12 11:22:25,407 - INFO - Layer 1 weight stats - mean: -0.0000, std: 0.0489, unique values: 1473
+2026-03-12 11:22:25,747 - INFO - Processing Layer 2...
+2026-03-12 11:22:43,722 - INFO - layer 2 iter 0 loss:1.3991515636444092 norm:0.163042813539505 max memory_allocated 5160.81298828125 
+2026-03-12 11:22:58,688 - INFO - layer 2 iter 1 loss:1.8705759048461914 norm:0.2181801199913025 max memory_allocated 5160.81298828125 
+2026-03-12 11:23:13,637 - INFO - layer 2 iter 2 loss:1.9201749563217163 norm:0.4501189589500427 max memory_allocated 5160.81298828125 
+2026-03-12 11:23:28,648 - INFO - layer 2 iter 3 loss:1.9256820678710938 norm:0.4687349200248718 max memory_allocated 5160.81298828125 
+2026-03-12 11:23:43,616 - INFO - layer 2 iter 4 loss:1.9234955310821533 norm:0.42760226130485535 max memory_allocated 5160.81298828125 
+2026-03-12 11:23:58,864 - INFO - layer 2 iter 5 loss:1.921876072883606 norm:0.4428926408290863 max memory_allocated 5160.81298828125 
+2026-03-12 11:24:13,873 - INFO - layer 2 iter 6 loss:1.9203064441680908 norm:0.41061800718307495 max memory_allocated 5160.81298828125 
+2026-03-12 11:24:29,132 - INFO - layer 2 iter 7 loss:1.9211506843566895 norm:0.5168053507804871 max memory_allocated 5160.81298828125 
+2026-03-12 11:24:44,419 - INFO - layer 2 iter 8 loss:1.9212514162063599 norm:0.43411025404930115 max memory_allocated 5160.81298828125 
+2026-03-12 11:24:59,807 - INFO - layer 2 iter 9 loss:1.9211186170578003 norm:0.39436665177345276 max memory_allocated 5160.81298828125 
+2026-03-12 11:25:01,574 - INFO - Layer 2 weight stats - mean: 0.0001, std: 0.1360, unique values: 1758
+2026-03-12 11:25:01,909 - INFO - Processing Layer 3...
+2026-03-12 11:25:20,259 - INFO - layer 3 iter 0 loss:1.4663983583450317 norm:0.10234988480806351 max memory_allocated 5161.64501953125 
+2026-03-12 11:25:35,354 - INFO - layer 3 iter 1 loss:1.9189969301223755 norm:0.45372122526168823 max memory_allocated 5161.64501953125 
+2026-03-12 11:25:50,360 - INFO - layer 3 iter 2 loss:1.9505666494369507 norm:0.33591988682746887 max memory_allocated 5161.64501953125 
+2026-03-12 11:26:05,447 - INFO - layer 3 iter 3 loss:1.9504142999649048 norm:0.38725194334983826 max memory_allocated 5161.64501953125 
+2026-03-12 11:26:20,569 - INFO - layer 3 iter 4 loss:1.9500266313552856 norm:0.39132723212242126 max memory_allocated 5161.64501953125 
+2026-03-12 11:26:35,526 - INFO - layer 3 iter 5 loss:1.9486783742904663 norm:0.36081960797309875 max memory_allocated 5161.64501953125 
+2026-03-12 11:26:50,552 - INFO - layer 3 iter 6 loss:1.9485976696014404 norm:0.3371666669845581 max memory_allocated 5161.64501953125 
+2026-03-12 11:27:05,790 - INFO - layer 3 iter 7 loss:1.9484331607818604 norm:0.3257485628128052 max memory_allocated 5161.64501953125 
+2026-03-12 11:27:20,618 - INFO - layer 3 iter 8 loss:1.948449730873108 norm:0.35096341371536255 max memory_allocated 5161.64501953125 
+2026-03-12 11:27:35,723 - INFO - layer 3 iter 9 loss:1.9487872123718262 norm:0.3152954578399658 max memory_allocated 5161.64501953125 
+2026-03-12 11:27:37,479 - INFO - Layer 3 weight stats - mean: -0.0000, std: 0.2583, unique values: 2127
+2026-03-12 11:27:37,805 - INFO - Processing Layer 4...
+2026-03-12 11:27:55,758 - INFO - layer 4 iter 0 loss:1.538079023361206 norm:0.10775678604841232 max memory_allocated 5162.05029296875 
+2026-03-12 11:28:10,525 - INFO - layer 4 iter 1 loss:1.9478180408477783 norm:0.2810470461845398 max memory_allocated 5162.05029296875 
+2026-03-12 11:28:25,224 - INFO - layer 4 iter 2 loss:1.9776337146759033 norm:0.20682787895202637 max memory_allocated 5162.05029296875 
+2026-03-12 11:28:40,260 - INFO - layer 4 iter 3 loss:1.9748488664627075 norm:0.172065868973732 max memory_allocated 5162.05029296875 
+2026-03-12 11:28:54,945 - INFO - layer 4 iter 4 loss:1.9711824655532837 norm:0.2683190107345581 max memory_allocated 5162.05029296875 
+2026-03-12 11:29:09,582 - INFO - layer 4 iter 5 loss:1.9670939445495605 norm:0.2531070113182068 max memory_allocated 5162.05029296875 
+2026-03-12 11:29:24,283 - INFO - layer 4 iter 6 loss:1.966241717338562 norm:0.24217195808887482 max memory_allocated 5162.05029296875 
+2026-03-12 11:29:38,867 - INFO - layer 4 iter 7 loss:1.966882586479187 norm:0.2824071943759918 max memory_allocated 5162.05029296875 
+2026-03-12 11:29:53,497 - INFO - layer 4 iter 8 loss:1.9657204151153564 norm:0.2464476227760315 max memory_allocated 5162.05029296875 
+2026-03-12 11:30:08,302 - INFO - layer 4 iter 9 loss:1.9658586978912354 norm:0.19000746309757233 max memory_allocated 5162.05029296875 
+2026-03-12 11:30:10,017 - INFO - Layer 4 weight stats - mean: 0.0001, std: 0.2399, unique values: 2108
+2026-03-12 11:30:10,320 - INFO - Processing Layer 5...
+2026-03-12 11:30:28,131 - INFO - layer 5 iter 0 loss:1.6543067693710327 norm:0.01620897464454174 max memory_allocated 5162.05029296875 
+2026-03-12 11:30:42,841 - INFO - layer 5 iter 1 loss:1.9736415147781372 norm:0.12230309098958969 max memory_allocated 5162.05029296875 
+2026-03-12 11:30:57,508 - INFO - layer 5 iter 2 loss:2.0022308826446533 norm:0.25707805156707764 max memory_allocated 5162.05029296875 
+2026-03-12 11:31:12,437 - INFO - layer 5 iter 3 loss:1.9968454837799072 norm:0.13784684240818024 max memory_allocated 5162.05029296875 
+2026-03-12 11:31:27,220 - INFO - layer 5 iter 4 loss:1.9906893968582153 norm:0.1391289085149765 max memory_allocated 5162.05029296875 
+2026-03-12 11:31:42,110 - INFO - layer 5 iter 5 loss:1.9836277961730957 norm:0.13689479231834412 max memory_allocated 5162.05029296875 
+2026-03-12 11:31:56,767 - INFO - layer 5 iter 6 loss:1.9814356565475464 norm:0.1912030726671219 max memory_allocated 5162.05029296875 
+2026-03-12 11:32:11,681 - INFO - layer 5 iter 7 loss:1.980974555015564 norm:0.19066597521305084 max memory_allocated 5162.05029296875 
+2026-03-12 11:32:26,408 - INFO - layer 5 iter 8 loss:1.9811975955963135 norm:0.14454732835292816 max memory_allocated 5162.05029296875 
+2026-03-12 11:32:41,374 - INFO - layer 5 iter 9 loss:1.9811289310455322 norm:0.11435128003358841 max memory_allocated 5162.05029296875 
+2026-03-12 11:32:43,101 - INFO - Layer 5 weight stats - mean: 0.0001, std: 0.2793, unique values: 1853
+2026-03-12 11:32:43,504 - INFO - Processing Layer 6...
+2026-03-12 11:33:01,779 - INFO - layer 6 iter 0 loss:1.8169755935668945 norm:0.008670706301927567 max memory_allocated 5162.84619140625 
+2026-03-12 11:33:17,045 - INFO - layer 6 iter 1 loss:1.9943264722824097 norm:0.052682794630527496 max memory_allocated 5162.88330078125 
+2026-03-12 11:33:32,091 - INFO - layer 6 iter 2 loss:2.019091844558716 norm:0.08931658416986465 max memory_allocated 5162.88330078125 
+2026-03-12 11:33:47,184 - INFO - layer 6 iter 3 loss:2.0126113891601562 norm:0.13320229947566986 max memory_allocated 5162.88330078125 
+2026-03-12 11:34:02,202 - INFO - layer 6 iter 4 loss:2.00296950340271 norm:0.1152152493596077 max memory_allocated 5162.88330078125 
+2026-03-12 11:34:17,350 - INFO - layer 6 iter 5 loss:1.9945788383483887 norm:0.119522824883461 max memory_allocated 5162.88330078125 
+2026-03-12 11:34:32,710 - INFO - layer 6 iter 6 loss:1.9916635751724243 norm:0.12783965468406677 max memory_allocated 5162.88330078125 
+2026-03-12 11:34:47,485 - INFO - layer 6 iter 7 loss:1.9910072088241577 norm:0.1512426882982254 max memory_allocated 5162.88330078125 
+2026-03-12 11:35:02,451 - INFO - layer 6 iter 8 loss:1.991381049156189 norm:0.13539601862430573 max memory_allocated 5162.88330078125 
+2026-03-12 11:35:17,143 - INFO - layer 6 iter 9 loss:1.9911643266677856 norm:0.13335463404655457 max memory_allocated 5162.88330078125 
+2026-03-12 11:35:18,861 - INFO - Layer 6 weight stats - mean: 0.0000, std: 0.2974, unique values: 2186
+2026-03-12 11:35:19,181 - INFO - Processing Layer 7...
+2026-03-12 11:35:37,051 - INFO - layer 7 iter 0 loss:1.9359064102172852 norm:0.0041837808676064014 max memory_allocated 5162.88330078125 
+2026-03-12 11:35:51,714 - INFO - layer 7 iter 1 loss:1.9934914112091064 norm:0.01928091049194336 max memory_allocated 5162.88330078125 
+2026-03-12 11:36:06,494 - INFO - layer 7 iter 2 loss:2.0075676441192627 norm:0.08225280791521072 max memory_allocated 5162.88330078125 
+2026-03-12 11:36:21,235 - INFO - layer 7 iter 3 loss:2.0049917697906494 norm:0.07738123089075089 max memory_allocated 5162.88330078125 
+2026-03-12 11:36:36,257 - INFO - layer 7 iter 4 loss:2.00030517578125 norm:0.05509056895971298 max memory_allocated 5162.88330078125 
+2026-03-12 11:36:51,210 - INFO - layer 7 iter 5 loss:1.9956525564193726 norm:0.08009374886751175 max memory_allocated 5162.88330078125 
+2026-03-12 11:37:06,121 - INFO - layer 7 iter 6 loss:1.9935650825500488 norm:0.08451244980096817 max memory_allocated 5162.88330078125 
+2026-03-12 11:37:21,127 - INFO - layer 7 iter 7 loss:1.9937463998794556 norm:0.08616388589143753 max memory_allocated 5162.88330078125 
+2026-03-12 11:37:36,073 - INFO - layer 7 iter 8 loss:1.9934512376785278 norm:0.08055521547794342 max memory_allocated 5162.88330078125 
+2026-03-12 11:37:51,218 - INFO - layer 7 iter 9 loss:1.9934570789337158 norm:0.08339733630418777 max memory_allocated 5162.88330078125 
+2026-03-12 11:37:52,962 - INFO - Layer 7 weight stats - mean: -0.0001, std: 0.2905, unique values: 2262
+2026-03-12 11:37:53,308 - INFO - Processing Layer 8...
+2026-03-12 11:38:11,493 - INFO - layer 8 iter 0 loss:2.0059521198272705 norm:0.001523480867035687 max memory_allocated 5162.88330078125 
+2026-03-12 11:38:26,474 - INFO - layer 8 iter 1 loss:2.0000364780426025 norm:0.030534526333212852 max memory_allocated 5162.88330078125 
+2026-03-12 11:38:41,428 - INFO - layer 8 iter 2 loss:2.0077757835388184 norm:0.04477806016802788 max memory_allocated 5162.88330078125 
+2026-03-12 11:38:56,530 - INFO - layer 8 iter 3 loss:2.0047104358673096 norm:0.06690771132707596 max memory_allocated 5162.88330078125 
+2026-03-12 11:39:11,551 - INFO - layer 8 iter 4 loss:2.0006422996520996 norm:0.06918128579854965 max memory_allocated 5162.88330078125 
+2026-03-12 11:39:26,590 - INFO - layer 8 iter 5 loss:1.9968063831329346 norm:0.07518438994884491 max memory_allocated 5162.88330078125 
+2026-03-12 11:39:41,889 - INFO - layer 8 iter 6 loss:1.9953871965408325 norm:0.08708353340625763 max memory_allocated 5162.88330078125 
+2026-03-12 11:39:56,965 - INFO - layer 8 iter 7 loss:1.9950528144836426 norm:0.08341743052005768 max memory_allocated 5162.88330078125 
+2026-03-12 11:40:11,908 - INFO - layer 8 iter 8 loss:1.9951716661453247 norm:0.09158143401145935 max memory_allocated 5162.88330078125 
+2026-03-12 11:40:26,808 - INFO - layer 8 iter 9 loss:1.9950683116912842 norm:0.10451111942529678 max memory_allocated 5162.88330078125 
+2026-03-12 11:40:28,581 - INFO - Layer 8 weight stats - mean: 0.0001, std: 0.2776, unique values: 2175
+2026-03-12 11:40:28,998 - INFO - Processing Layer 9...
+2026-03-12 11:40:47,253 - INFO - layer 9 iter 0 loss:2.1058409214019775 norm:0.0015429412014782429 max memory_allocated 5162.88330078125 
+2026-03-12 11:41:02,590 - INFO - layer 9 iter 1 loss:1.9989356994628906 norm:0.015987969934940338 max memory_allocated 5162.88330078125 
+2026-03-12 11:41:17,360 - INFO - layer 9 iter 2 loss:2.0042412281036377 norm:0.051542073488235474 max memory_allocated 5162.88330078125 
+2026-03-12 11:41:32,317 - INFO - layer 9 iter 3 loss:2.0030431747436523 norm:0.044088125228881836 max memory_allocated 5162.88330078125 
+2026-03-12 11:41:47,479 - INFO - layer 9 iter 4 loss:2.000244140625 norm:0.05560242384672165 max memory_allocated 5162.88330078125 
+2026-03-12 11:42:02,386 - INFO - layer 9 iter 5 loss:1.9977020025253296 norm:0.05507678911089897 max memory_allocated 5162.88330078125 
+2026-03-12 11:42:17,537 - INFO - layer 9 iter 6 loss:1.9963549375534058 norm:0.07202181965112686 max memory_allocated 5162.88330078125 
+2026-03-12 11:42:32,638 - INFO - layer 9 iter 7 loss:1.9962918758392334 norm:0.05441717803478241 max memory_allocated 5162.88330078125 
+2026-03-12 11:42:47,892 - INFO - layer 9 iter 8 loss:1.9963597059249878 norm:0.06402880698442459 max memory_allocated 5162.88330078125 
+2026-03-12 11:43:02,978 - INFO - layer 9 iter 9 loss:1.9962282180786133 norm:0.05136243999004364 max memory_allocated 5162.88330078125 
+2026-03-12 11:43:04,698 - INFO - Layer 9 weight stats - mean: -0.0001, std: 0.2654, unique values: 2222
+2026-03-12 11:43:05,047 - INFO - Processing Layer 10...
+2026-03-12 11:43:23,028 - INFO - layer 10 iter 0 loss:2.203317880630493 norm:0.0012749580200761557 max memory_allocated 5163.49755859375 
+2026-03-12 11:43:37,962 - INFO - layer 10 iter 1 loss:2.003206491470337 norm:0.02534514293074608 max memory_allocated 5163.49755859375 
+2026-03-12 11:43:52,754 - INFO - layer 10 iter 2 loss:2.017069101333618 norm:0.050933562219142914 max memory_allocated 5163.49755859375 
+2026-03-12 11:44:07,936 - INFO - layer 10 iter 3 loss:2.013856887817383 norm:0.0842929556965828 max memory_allocated 5163.49755859375 
+2026-03-12 11:44:23,051 - INFO - layer 10 iter 4 loss:2.0071399211883545 norm:0.05903605744242668 max memory_allocated 5163.49755859375 
+2026-03-12 11:44:38,001 - INFO - layer 10 iter 5 loss:2.000490427017212 norm:0.05960378423333168 max memory_allocated 5163.49755859375 
+2026-03-12 11:44:52,874 - INFO - layer 10 iter 6 loss:1.9974204301834106 norm:0.0891440212726593 max memory_allocated 5163.49755859375 
+2026-03-12 11:45:07,958 - INFO - layer 10 iter 7 loss:1.9977856874465942 norm:0.0851338654756546 max memory_allocated 5163.49755859375 
+2026-03-12 11:45:22,863 - INFO - layer 10 iter 8 loss:1.9973894357681274 norm:0.062038008123636246 max memory_allocated 5163.49755859375 
+2026-03-12 11:45:37,815 - INFO - layer 10 iter 9 loss:1.9977309703826904 norm:0.09989342838525772 max memory_allocated 5163.49755859375 
+2026-03-12 11:45:39,568 - INFO - Layer 10 weight stats - mean: -0.0000, std: 0.2988, unique values: 2197
+2026-03-12 11:45:39,927 - INFO - Processing Layer 11...
+2026-03-12 11:45:58,000 - INFO - layer 11 iter 0 loss:2.2793304920196533 norm:0.0038698201533406973 max memory_allocated 5163.49755859375 
+2026-03-12 11:46:12,869 - INFO - layer 11 iter 1 loss:2.006985902786255 norm:0.031890835613012314 max memory_allocated 5163.49755859375 
+2026-03-12 11:46:27,882 - INFO - layer 11 iter 2 loss:2.018828868865967 norm:0.10094106942415237 max memory_allocated 5163.49755859375 
+2026-03-12 11:46:42,801 - INFO - layer 11 iter 3 loss:2.014814853668213 norm:0.09038720279932022 max memory_allocated 5163.49755859375 
+2026-03-12 11:46:57,723 - INFO - layer 11 iter 4 loss:2.008251667022705 norm:0.07066837698221207 max memory_allocated 5163.49755859375 
+2026-03-12 11:47:12,557 - INFO - layer 11 iter 5 loss:2.001361608505249 norm:0.06677889078855515 max memory_allocated 5163.49755859375 
+2026-03-12 11:47:27,304 - INFO - layer 11 iter 6 loss:1.9988408088684082 norm:0.08563050627708435 max memory_allocated 5163.49755859375 
+2026-03-12 11:47:42,208 - INFO - layer 11 iter 7 loss:1.9984160661697388 norm:0.09147421270608902 max memory_allocated 5163.49755859375 
+2026-03-12 11:47:57,207 - INFO - layer 11 iter 8 loss:1.9981920719146729 norm:0.06458204239606857 max memory_allocated 5163.49755859375 
+2026-03-12 11:48:12,581 - INFO - layer 11 iter 9 loss:1.9982376098632812 norm:0.0815102607011795 max memory_allocated 5163.49755859375 
+2026-03-12 11:48:14,328 - INFO - Layer 11 weight stats - mean: 0.0001, std: 0.2988, unique values: 2143
+2026-03-12 11:48:14,697 - INFO - Processing Layer 12...
+2026-03-12 11:48:32,773 - INFO - layer 12 iter 0 loss:2.3123416900634766 norm:0.0015312297036871314 max memory_allocated 5164.29443359375 
+2026-03-12 11:48:47,727 - INFO - layer 12 iter 1 loss:2.0063936710357666 norm:0.015541262924671173 max memory_allocated 5164.29443359375 
+2026-03-12 11:49:02,815 - INFO - layer 12 iter 2 loss:2.0160510540008545 norm:0.058916836977005005 max memory_allocated 5164.29443359375 
+2026-03-12 11:49:18,093 - INFO - layer 12 iter 3 loss:2.0134055614471436 norm:0.05029187351465225 max memory_allocated 5164.29443359375 
+2026-03-12 11:49:33,113 - INFO - layer 12 iter 4 loss:2.0070526599884033 norm:0.05986374244093895 max memory_allocated 5164.29443359375 
+2026-03-12 11:49:48,089 - INFO - layer 12 iter 5 loss:2.0010719299316406 norm:0.05904802307486534 max memory_allocated 5164.29443359375 
+2026-03-12 11:50:02,926 - INFO - layer 12 iter 6 loss:1.9988408088684082 norm:0.07750607281923294 max memory_allocated 5164.29443359375 
+2026-03-12 11:50:17,836 - INFO - layer 12 iter 7 loss:1.9985387325286865 norm:0.0999341830611229 max memory_allocated 5164.29443359375 
+2026-03-12 11:50:33,068 - INFO - layer 12 iter 8 loss:1.998435139656067 norm:0.06908052414655685 max memory_allocated 5164.29443359375 
+2026-03-12 11:50:48,055 - INFO - layer 12 iter 9 loss:1.9983906745910645 norm:0.08247558027505875 max memory_allocated 5164.29443359375 
+2026-03-12 11:50:49,811 - INFO - Layer 12 weight stats - mean: -0.0000, std: 0.2722, unique values: 2092
+2026-03-12 11:50:50,200 - INFO - Processing Layer 13...
+2026-03-12 11:51:08,284 - INFO - layer 13 iter 0 loss:2.3580820560455322 norm:0.001371958409436047 max memory_allocated 5164.29443359375 
+2026-03-12 11:51:23,472 - INFO - layer 13 iter 1 loss:2.004457712173462 norm:0.010995370335876942 max memory_allocated 5164.29443359375 
+2026-03-12 11:51:38,486 - INFO - layer 13 iter 2 loss:2.0052974224090576 norm:0.05210132151842117 max memory_allocated 5164.29443359375 
+2026-03-12 11:51:53,381 - INFO - layer 13 iter 3 loss:2.0046961307525635 norm:0.07949371635913849 max memory_allocated 5164.29443359375 
+2026-03-12 11:52:08,103 - INFO - layer 13 iter 4 loss:2.002227306365967 norm:0.07372774183750153 max memory_allocated 5164.29443359375 
+2026-03-12 11:52:23,025 - INFO - layer 13 iter 5 loss:1.9999953508377075 norm:0.1337403953075409 max memory_allocated 5164.29443359375 
+2026-03-12 11:52:38,030 - INFO - layer 13 iter 6 loss:1.9985578060150146 norm:0.06534156948328018 max memory_allocated 5164.29443359375 
+2026-03-12 11:52:52,719 - INFO - layer 13 iter 7 loss:1.9987269639968872 norm:0.08459055423736572 max memory_allocated 5164.29443359375 
+2026-03-12 11:53:07,558 - INFO - layer 13 iter 8 loss:1.9986640214920044 norm:0.05749489739537239 max memory_allocated 5164.29443359375 
+2026-03-12 11:53:22,301 - INFO - layer 13 iter 9 loss:1.9988199472427368 norm:0.06498341262340546 max memory_allocated 5164.29443359375 
+2026-03-12 11:53:24,000 - INFO - Layer 13 weight stats - mean: 0.0001, std: 0.3120, unique values: 2020
+2026-03-12 11:53:24,308 - INFO - Processing Layer 14...
+2026-03-12 11:53:42,157 - INFO - layer 14 iter 0 loss:2.3922672271728516 norm:0.0009449239587411284 max memory_allocated 5165.09130859375 
+2026-03-12 11:53:57,041 - INFO - layer 14 iter 1 loss:2.0092005729675293 norm:0.014610343612730503 max memory_allocated 5165.09130859375 
+2026-03-12 11:54:11,898 - INFO - layer 14 iter 2 loss:2.007766008377075 norm:0.06559160351753235 max memory_allocated 5165.09130859375 
+2026-03-12 11:54:26,604 - INFO - layer 14 iter 3 loss:2.0059092044830322 norm:0.10425887256860733 max memory_allocated 5165.09130859375 
+2026-03-12 11:54:41,335 - INFO - layer 14 iter 4 loss:2.0030720233917236 norm:0.05853859335184097 max memory_allocated 5165.09130859375 
+2026-03-12 11:54:56,360 - INFO - layer 14 iter 5 loss:2.000495433807373 norm:0.08528952300548553 max memory_allocated 5165.09130859375 
+2026-03-12 11:55:11,500 - INFO - layer 14 iter 6 loss:1.9992693662643433 norm:0.08108086884021759 max memory_allocated 5165.09130859375 
+2026-03-12 11:55:26,528 - INFO - layer 14 iter 7 loss:1.9988843202590942 norm:0.08792691677808762 max memory_allocated 5165.09130859375 
+2026-03-12 11:55:41,487 - INFO - layer 14 iter 8 loss:1.9988840818405151 norm:0.06861589848995209 max memory_allocated 5165.09130859375 
+2026-03-12 11:55:56,297 - INFO - layer 14 iter 9 loss:1.999091386795044 norm:0.058879025280475616 max memory_allocated 5165.09130859375 
+2026-03-12 11:55:58,029 - INFO - Layer 14 weight stats - mean: -0.0001, std: 0.2756, unique values: 2120
+2026-03-12 11:55:58,362 - INFO - Processing Layer 15...
+2026-03-12 11:56:16,219 - INFO - layer 15 iter 0 loss:2.435985803604126 norm:0.0015458292327821255 max memory_allocated 5165.09130859375 
+2026-03-12 11:56:31,131 - INFO - layer 15 iter 1 loss:2.0085623264312744 norm:0.009094766341149807 max memory_allocated 5165.09130859375 
+2026-03-12 11:56:45,911 - INFO - layer 15 iter 2 loss:2.011929750442505 norm:0.054465968161821365 max memory_allocated 5165.09130859375 
+2026-03-12 11:57:00,716 - INFO - layer 15 iter 3 loss:2.010143995285034 norm:0.062146060168743134 max memory_allocated 5165.09130859375 
+2026-03-12 11:57:15,732 - INFO - layer 15 iter 4 loss:2.0059468746185303 norm:0.06868373602628708 max memory_allocated 5165.09130859375 
+2026-03-12 11:57:30,617 - INFO - layer 15 iter 5 loss:2.0012903213500977 norm:0.0655868723988533 max memory_allocated 5165.09130859375 
+2026-03-12 11:57:45,364 - INFO - layer 15 iter 6 loss:1.999530553817749 norm:0.0790795236825943 max memory_allocated 5165.09130859375 
+2026-03-12 11:58:00,164 - INFO - layer 15 iter 7 loss:1.9991239309310913 norm:0.07690377533435822 max memory_allocated 5165.09130859375 
+2026-03-12 11:58:15,106 - INFO - layer 15 iter 8 loss:1.9992074966430664 norm:0.06901179999113083 max memory_allocated 5165.09130859375 
+2026-03-12 11:58:29,898 - INFO - layer 15 iter 9 loss:1.999085545539856 norm:0.09486516565084457 max memory_allocated 5165.09130859375 
+2026-03-12 11:58:31,653 - INFO - Layer 15 weight stats - mean: -0.0001, std: 0.2739, unique values: 2295
+2026-03-12 11:58:32,025 - INFO - Processing Layer 16...
+2026-03-12 11:58:49,946 - INFO - layer 16 iter 0 loss:2.486236333847046 norm:0.0010720918653532863 max memory_allocated 5165.88818359375 
+2026-03-12 11:59:04,878 - INFO - layer 16 iter 1 loss:2.0126423835754395 norm:0.004134529735893011 max memory_allocated 5165.88818359375 
+2026-03-12 11:59:19,787 - INFO - layer 16 iter 2 loss:2.009916067123413 norm:0.049946583807468414 max memory_allocated 5165.88818359375 
+2026-03-12 11:59:34,544 - INFO - layer 16 iter 3 loss:2.007786512374878 norm:0.10076507180929184 max memory_allocated 5165.88818359375 
+2026-03-12 11:59:49,581 - INFO - layer 16 iter 4 loss:2.0040955543518066 norm:0.09869284927845001 max memory_allocated 5165.88818359375 
+2026-03-12 12:00:04,625 - INFO - layer 16 iter 5 loss:2.0009288787841797 norm:0.0652289092540741 max memory_allocated 5165.88818359375 
+2026-03-12 12:00:19,539 - INFO - layer 16 iter 6 loss:1.9998146295547485 norm:0.09423177689313889 max memory_allocated 5165.88818359375 
+2026-03-12 12:00:34,522 - INFO - layer 16 iter 7 loss:1.9993243217468262 norm:0.09453291445970535 max memory_allocated 5165.88818359375 
+2026-03-12 12:00:49,527 - INFO - layer 16 iter 8 loss:1.9994432926177979 norm:0.08602748066186905 max memory_allocated 5165.88818359375 
+2026-03-12 12:01:04,478 - INFO - layer 16 iter 9 loss:1.999363660812378 norm:0.054721079766750336 max memory_allocated 5165.88818359375 
+2026-03-12 12:01:06,218 - INFO - Layer 16 weight stats - mean: 0.0001, std: 0.1812, unique values: 2266
+2026-03-12 12:01:06,554 - INFO - Processing Layer 17...
+2026-03-12 12:01:24,548 - INFO - layer 17 iter 0 loss:2.505483627319336 norm:0.0010298856068402529 max memory_allocated 5165.88818359375 
+2026-03-12 12:01:39,554 - INFO - layer 17 iter 1 loss:2.015918493270874 norm:0.002159188501536846 max memory_allocated 5165.88818359375 
+2026-03-12 12:01:54,602 - INFO - layer 17 iter 2 loss:2.021108865737915 norm:0.040714651346206665 max memory_allocated 5165.88818359375 
+2026-03-12 12:02:09,374 - INFO - layer 17 iter 3 loss:2.015803813934326 norm:0.09878414869308472 max memory_allocated 5165.88818359375 
+2026-03-12 12:02:24,332 - INFO - layer 17 iter 4 loss:2.0093252658843994 norm:0.18342021107673645 max memory_allocated 5165.88818359375 
+2026-03-12 12:02:39,195 - INFO - layer 17 iter 5 loss:2.0023255348205566 norm:0.10954666882753372 max memory_allocated 5165.88818359375 
+2026-03-12 12:02:54,027 - INFO - layer 17 iter 6 loss:1.9997128248214722 norm:0.10775334388017654 max memory_allocated 5165.88818359375 
+2026-03-12 12:03:08,834 - INFO - layer 17 iter 7 loss:1.9996627569198608 norm:0.08709844201803207 max memory_allocated 5165.88818359375 
+2026-03-12 12:03:23,689 - INFO - layer 17 iter 8 loss:1.9992963075637817 norm:0.08553042262792587 max memory_allocated 5165.88818359375 
+2026-03-12 12:03:38,695 - INFO - layer 17 iter 9 loss:1.9991881847381592 norm:0.08861679583787918 max memory_allocated 5165.88818359375 
+2026-03-12 12:03:40,454 - INFO - Layer 17 weight stats - mean: 0.0001, std: 0.3203, unique values: 2214
+2026-03-12 12:03:40,882 - INFO - Processing Layer 18...
+2026-03-12 12:03:59,008 - INFO - layer 18 iter 0 loss:2.5504119396209717 norm:0.0009727145079523325 max memory_allocated 5166.68505859375 
+2026-03-12 12:04:13,831 - INFO - layer 18 iter 1 loss:2.0094797611236572 norm:0.0011947185266762972 max memory_allocated 5166.68505859375 
+2026-03-12 12:04:28,851 - INFO - layer 18 iter 2 loss:2.0051109790802 norm:0.04909086972475052 max memory_allocated 5166.68505859375 
+2026-03-12 12:04:43,786 - INFO - layer 18 iter 3 loss:2.00390625 norm:0.13082799315452576 max memory_allocated 5166.68505859375 
+2026-03-12 12:04:58,588 - INFO - layer 18 iter 4 loss:2.0020430088043213 norm:0.09628085047006607 max memory_allocated 5166.68505859375 
+2026-03-12 12:05:13,468 - INFO - layer 18 iter 5 loss:2.0004875659942627 norm:0.12674809992313385 max memory_allocated 5166.68505859375 
+2026-03-12 12:05:28,110 - INFO - layer 18 iter 6 loss:1.999888300895691 norm:0.14516854286193848 max memory_allocated 5166.68505859375 
+2026-03-12 12:05:42,989 - INFO - layer 18 iter 7 loss:1.9992927312850952 norm:0.08071617782115936 max memory_allocated 5166.68505859375 
+2026-03-12 12:05:57,662 - INFO - layer 18 iter 8 loss:1.9996652603149414 norm:0.11475121229887009 max memory_allocated 5166.68505859375 
+2026-03-12 12:06:12,335 - INFO - layer 18 iter 9 loss:1.9997403621673584 norm:0.11592289060354233 max memory_allocated 5166.68505859375 
+2026-03-12 12:06:14,031 - INFO - Layer 18 weight stats - mean: 0.0000, std: 0.2590, unique values: 2274
+2026-03-12 12:06:14,386 - INFO - Processing Layer 19...
+2026-03-12 12:06:32,050 - INFO - layer 19 iter 0 loss:2.5734705924987793 norm:0.000686130893882364 max memory_allocated 5166.68505859375 
+2026-03-12 12:06:46,796 - INFO - layer 19 iter 1 loss:2.010566234588623 norm:0.0006271199090406299 max memory_allocated 5166.68505859375 
+2026-03-12 12:07:01,378 - INFO - layer 19 iter 2 loss:2.0054478645324707 norm:0.00833565928041935 max memory_allocated 5166.68505859375 
+2026-03-12 12:07:16,114 - INFO - layer 19 iter 3 loss:2.004458427429199 norm:0.050460703670978546 max memory_allocated 5166.68505859375 
+2026-03-12 12:07:30,849 - INFO - layer 19 iter 4 loss:2.002528190612793 norm:0.04707515984773636 max memory_allocated 5166.68505859375 
+2026-03-12 12:07:45,759 - INFO - layer 19 iter 5 loss:2.0004522800445557 norm:0.10220314562320709 max memory_allocated 5166.68505859375 
+2026-03-12 12:08:00,478 - INFO - layer 19 iter 6 loss:1.999646782875061 norm:0.06264800578355789 max memory_allocated 5166.68505859375 
+2026-03-12 12:08:15,365 - INFO - layer 19 iter 7 loss:1.9994345903396606 norm:0.04757656902074814 max memory_allocated 5166.68505859375 
+2026-03-12 12:08:30,245 - INFO - layer 19 iter 8 loss:1.9993891716003418 norm:0.04544448107481003 max memory_allocated 5166.68505859375 
+2026-03-12 12:08:45,193 - INFO - layer 19 iter 9 loss:1.9995366334915161 norm:0.043732769787311554 max memory_allocated 5166.68505859375 
+2026-03-12 12:08:46,928 - INFO - Layer 19 weight stats - mean: -0.0000, std: 0.1827, unique values: 2053
+2026-03-12 12:08:47,262 - INFO - Processing Layer 20...
+2026-03-12 12:09:05,032 - INFO - layer 20 iter 0 loss:2.632760524749756 norm:0.001110736862756312 max memory_allocated 5167.48193359375 
+2026-03-12 12:09:19,764 - INFO - layer 20 iter 1 loss:2.0097639560699463 norm:0.0019072142895311117 max memory_allocated 5167.48193359375 
+2026-03-12 12:09:34,528 - INFO - layer 20 iter 2 loss:2.0071353912353516 norm:0.01369448471814394 max memory_allocated 5167.48193359375 
+2026-03-12 12:09:49,242 - INFO - layer 20 iter 3 loss:2.006357431411743 norm:0.10143553465604782 max memory_allocated 5167.48193359375 
+2026-03-12 12:10:04,106 - INFO - layer 20 iter 4 loss:2.0033211708068848 norm:0.06809408217668533 max memory_allocated 5167.48193359375 
+2026-03-12 12:10:18,777 - INFO - layer 20 iter 5 loss:2.000662088394165 norm:0.07830225676298141 max memory_allocated 5167.48193359375 
+2026-03-12 12:10:33,602 - INFO - layer 20 iter 6 loss:1.9994282722473145 norm:0.06791366636753082 max memory_allocated 5167.48193359375 
+2026-03-12 12:10:48,508 - INFO - layer 20 iter 7 loss:1.9996365308761597 norm:0.04458962753415108 max memory_allocated 5167.48193359375 
+2026-03-12 12:11:03,188 - INFO - layer 20 iter 8 loss:1.99935781955719 norm:0.051158659160137177 max memory_allocated 5167.48193359375 
+2026-03-12 12:11:17,683 - INFO - layer 20 iter 9 loss:1.999192237854004 norm:0.0939410924911499 max memory_allocated 5167.48193359375 
+2026-03-12 12:11:19,386 - INFO - Layer 20 weight stats - mean: -0.0000, std: 0.2422, unique values: 2327
+2026-03-12 12:11:19,761 - INFO - Processing Layer 21...
+2026-03-12 12:11:37,729 - INFO - layer 21 iter 0 loss:2.65579891204834 norm:0.0008461131365038455 max memory_allocated 5167.48193359375 
+2026-03-12 12:11:52,613 - INFO - layer 21 iter 1 loss:2.010620594024658 norm:0.0007536865305155516 max memory_allocated 5167.48193359375 
+2026-03-12 12:12:07,334 - INFO - layer 21 iter 2 loss:2.0044748783111572 norm:0.020168643444776535 max memory_allocated 5167.48193359375 
+2026-03-12 12:12:22,165 - INFO - layer 21 iter 3 loss:2.0037617683410645 norm:0.05835995450615883 max memory_allocated 5167.48193359375 
+2026-03-12 12:12:37,081 - INFO - layer 21 iter 4 loss:2.001699686050415 norm:0.05045164376497269 max memory_allocated 5167.48193359375 
+2026-03-12 12:12:52,222 - INFO - layer 21 iter 5 loss:2.0000360012054443 norm:0.05846280977129936 max memory_allocated 5167.48193359375 
+2026-03-12 12:13:07,114 - INFO - layer 21 iter 6 loss:1.9997527599334717 norm:0.07124491035938263 max memory_allocated 5167.48193359375 
+2026-03-12 12:13:21,956 - INFO - layer 21 iter 7 loss:1.9988242387771606 norm:0.08030561357736588 max memory_allocated 5167.48193359375 
+2026-03-12 12:13:36,936 - INFO - layer 21 iter 8 loss:1.9993631839752197 norm:0.051101479679346085 max memory_allocated 5167.48193359375 
+2026-03-12 12:13:52,129 - INFO - layer 21 iter 9 loss:1.9990023374557495 norm:0.09171123057603836 max memory_allocated 5167.48193359375 
+2026-03-12 12:13:54,019 - INFO - Layer 21 weight stats - mean: -0.0001, std: 0.2289, unique values: 2218
+2026-03-12 12:13:54,503 - INFO - Processing Layer 22...
+2026-03-12 12:14:12,077 - INFO - layer 22 iter 0 loss:2.6839277744293213 norm:0.0011931833578273654 max memory_allocated 5168.27880859375 
+2026-03-12 12:14:26,729 - INFO - layer 22 iter 1 loss:2.0119988918304443 norm:0.0017926167929545045 max memory_allocated 5168.27880859375 
+2026-03-12 12:14:41,788 - INFO - layer 22 iter 2 loss:2.004880905151367 norm:0.07213670015335083 max memory_allocated 5168.27880859375 
+2026-03-12 12:14:56,572 - INFO - layer 22 iter 3 loss:2.002976179122925 norm:0.22090032696723938 max memory_allocated 5168.27880859375 
+2026-03-12 12:15:11,417 - INFO - layer 22 iter 4 loss:2.0026657581329346 norm:0.25770458579063416 max memory_allocated 5168.27880859375 
+2026-03-12 12:15:26,299 - INFO - layer 22 iter 5 loss:1.9994781017303467 norm:0.2866404354572296 max memory_allocated 5168.27880859375 
+2026-03-12 12:15:41,203 - INFO - layer 22 iter 6 loss:2.000358819961548 norm:0.19109365344047546 max memory_allocated 5168.27880859375 
+2026-03-12 12:15:56,110 - INFO - layer 22 iter 7 loss:1.9995142221450806 norm:0.1507883220911026 max memory_allocated 5168.27880859375 
+2026-03-12 12:16:10,932 - INFO - layer 22 iter 8 loss:1.9995455741882324 norm:0.12049436569213867 max memory_allocated 5168.27880859375 
+2026-03-12 12:16:25,612 - INFO - layer 22 iter 9 loss:1.998536229133606 norm:0.1603340059518814 max memory_allocated 5168.27880859375 
+2026-03-12 12:16:27,360 - INFO - Layer 22 weight stats - mean: -0.0001, std: 0.2590, unique values: 2238
+2026-03-12 12:16:27,756 - INFO - Processing Layer 23...
+2026-03-12 12:16:47,386 - INFO - layer 23 iter 0 loss:2.705941677093506 norm:0.0011044536950066686 max memory_allocated 5168.27880859375 
+2026-03-12 12:17:02,238 - INFO - layer 23 iter 1 loss:2.0109541416168213 norm:0.0010798894800245762 max memory_allocated 5168.27880859375 
+2026-03-12 12:17:17,104 - INFO - layer 23 iter 2 loss:2.002990961074829 norm:0.02379990741610527 max memory_allocated 5168.27880859375 
+2026-03-12 12:17:31,676 - INFO - layer 23 iter 3 loss:2.0026352405548096 norm:0.22870773077011108 max memory_allocated 5168.27880859375 
+2026-03-12 12:17:46,465 - INFO - layer 23 iter 4 loss:2.0010061264038086 norm:0.17542631924152374 max memory_allocated 5168.27880859375 
+2026-03-12 12:18:01,240 - INFO - layer 23 iter 5 loss:2.0002410411834717 norm:0.32017043232917786 max memory_allocated 5168.27880859375 
+2026-03-12 12:18:16,069 - INFO - layer 23 iter 6 loss:1.9979428052902222 norm:0.15186691284179688 max memory_allocated 5168.27880859375 
+2026-03-12 12:18:30,787 - INFO - layer 23 iter 7 loss:2.00113582611084 norm:0.2612755596637726 max memory_allocated 5168.27880859375 
+2026-03-12 12:18:45,454 - INFO - layer 23 iter 8 loss:1.9979757070541382 norm:0.18770617246627808 max memory_allocated 5168.27880859375 
+2026-03-12 12:19:00,177 - INFO - layer 23 iter 9 loss:1.999229907989502 norm:0.14156945049762726 max memory_allocated 5168.27880859375 
+2026-03-12 12:19:01,923 - INFO - Layer 23 weight stats - mean: 0.0000, std: 0.2438, unique values: 2304
+2026-03-12 12:19:02,306 - INFO - Processing Layer 24...
+2026-03-12 12:19:20,192 - INFO - layer 24 iter 0 loss:2.7268660068511963 norm:0.0016228326130658388 max memory_allocated 5169.07568359375 
+2026-03-12 12:19:35,027 - INFO - layer 24 iter 1 loss:2.0073299407958984 norm:0.001399885630235076 max memory_allocated 5169.07568359375 
+2026-03-12 12:19:49,731 - INFO - layer 24 iter 2 loss:2.0012900829315186 norm:0.04758208245038986 max memory_allocated 5169.07568359375 
+2026-03-12 12:20:04,501 - INFO - layer 24 iter 3 loss:2.0019781589508057 norm:0.14963893592357635 max memory_allocated 5169.07568359375 
+2026-03-12 12:20:19,276 - INFO - layer 24 iter 4 loss:2.001446485519409 norm:0.09686177223920822 max memory_allocated 5169.07568359375 
+2026-03-12 12:20:34,117 - INFO - layer 24 iter 5 loss:1.9997073411941528 norm:0.2971886396408081 max memory_allocated 5169.07568359375 
+2026-03-12 12:20:48,958 - INFO - layer 24 iter 6 loss:1.999104619026184 norm:0.24736709892749786 max memory_allocated 5169.07568359375 
+2026-03-12 12:21:03,753 - INFO - layer 24 iter 7 loss:1.9994789361953735 norm:0.1639959067106247 max memory_allocated 5169.07568359375 
+2026-03-12 12:21:18,513 - INFO - layer 24 iter 8 loss:1.9991973638534546 norm:0.2530481219291687 max memory_allocated 5169.07568359375 
+2026-03-12 12:21:32,926 - INFO - layer 24 iter 9 loss:1.9988901615142822 norm:0.15679945051670074 max memory_allocated 5169.07568359375 
+2026-03-12 12:21:34,636 - INFO - Layer 24 weight stats - mean: 0.0000, std: 0.2274, unique values: 2298
+2026-03-12 12:21:35,115 - INFO - Processing Layer 25...
+2026-03-12 12:21:52,838 - INFO - layer 25 iter 0 loss:2.7387213706970215 norm:0.001331843202933669 max memory_allocated 5169.07568359375 
+2026-03-12 12:22:07,588 - INFO - layer 25 iter 1 loss:2.007800579071045 norm:0.0010775087866932154 max memory_allocated 5169.07568359375 
+2026-03-12 12:22:22,158 - INFO - layer 25 iter 2 loss:1.9996503591537476 norm:0.01205103937536478 max memory_allocated 5169.07568359375 
+2026-03-12 12:22:36,902 - INFO - layer 25 iter 3 loss:2.0008108615875244 norm:0.08916793763637543 max memory_allocated 5169.07568359375 
+2026-03-12 12:22:51,537 - INFO - layer 25 iter 4 loss:2.0003840923309326 norm:0.1848522424697876 max memory_allocated 5169.07568359375 
+2026-03-12 12:23:06,350 - INFO - layer 25 iter 5 loss:2.000070810317993 norm:0.14629633724689484 max memory_allocated 5169.07568359375 
+2026-03-12 12:23:21,053 - INFO - layer 25 iter 6 loss:1.9996347427368164 norm:0.21067063510417938 max memory_allocated 5169.07568359375 
+2026-03-12 12:23:35,722 - INFO - layer 25 iter 7 loss:1.9986107349395752 norm:0.11506395041942596 max memory_allocated 5169.07568359375 
+2026-03-12 12:23:50,381 - INFO - layer 25 iter 8 loss:1.9994107484817505 norm:0.12119315564632416 max memory_allocated 5169.07568359375 
+2026-03-12 12:24:05,212 - INFO - layer 25 iter 9 loss:1.9997190237045288 norm:0.22319395840168 max memory_allocated 5169.07568359375 
+2026-03-12 12:24:06,930 - INFO - Layer 25 weight stats - mean: 0.0000, std: 0.2225, unique values: 2155
+2026-03-12 12:24:07,303 - INFO - Processing Layer 26...
+2026-03-12 12:24:25,146 - INFO - layer 26 iter 0 loss:2.7897205352783203 norm:0.003618634305894375 max memory_allocated 5169.87255859375 
+2026-03-12 12:24:39,930 - INFO - layer 26 iter 1 loss:2.0097522735595703 norm:0.0174248144030571 max memory_allocated 5169.87255859375 
+2026-03-12 12:24:54,673 - INFO - layer 26 iter 2 loss:1.9963935613632202 norm:0.009817586280405521 max memory_allocated 5169.87255859375 
+2026-03-12 12:25:09,340 - INFO - layer 26 iter 3 loss:2.001138925552368 norm:0.018733715638518333 max memory_allocated 5169.87255859375 
+2026-03-12 12:25:24,045 - INFO - layer 26 iter 4 loss:1.996696949005127 norm:0.013165010139346123 max memory_allocated 5169.87255859375 
+2026-03-12 12:25:38,404 - INFO - layer 26 iter 5 loss:2.0007996559143066 norm:0.01651913672685623 max memory_allocated 5169.87255859375 
+2026-03-12 12:25:53,055 - INFO - layer 26 iter 6 loss:1.9977269172668457 norm:0.023104975000023842 max memory_allocated 5169.87255859375 
+2026-03-12 12:26:07,870 - INFO - layer 26 iter 7 loss:2.0037496089935303 norm:5.039478302001953 max memory_allocated 5169.87255859375 
+2026-03-12 12:26:22,571 - INFO - layer 26 iter 8 loss:1.9823181629180908 norm:0.5415381193161011 max memory_allocated 5169.87255859375 
+2026-03-12 12:26:37,302 - INFO - layer 26 iter 9 loss:2.004629373550415 norm:0.3634078800678253 max memory_allocated 5169.87255859375 
+2026-03-12 12:26:39,046 - INFO - Layer 26 weight stats - mean: 0.0000, std: 0.0374, unique values: 2247
+2026-03-12 12:26:39,383 - INFO - Processing Layer 27...
+2026-03-12 12:26:57,259 - INFO - layer 27 iter 0 loss:2.7850117683410645 norm:0.0012498555006459355 max memory_allocated 5169.87255859375 
+2026-03-12 12:27:11,985 - INFO - layer 27 iter 1 loss:2.0098743438720703 norm:0.0011117728427052498 max memory_allocated 5169.87255859375 
+2026-03-12 12:27:26,635 - INFO - layer 27 iter 2 loss:2.0011579990386963 norm:0.0023047283757478 max memory_allocated 5169.87255859375 
+2026-03-12 12:27:41,403 - INFO - layer 27 iter 3 loss:2.00165057182312 norm:0.16636402904987335 max memory_allocated 5169.87255859375 
+2026-03-12 12:27:56,301 - INFO - layer 27 iter 4 loss:1.999918818473816 norm:0.15992657840251923 max memory_allocated 5169.87255859375 
+2026-03-12 12:28:10,940 - INFO - layer 27 iter 5 loss:1.9996768236160278 norm:0.22623291611671448 max memory_allocated 5169.87255859375 
+2026-03-12 12:28:25,726 - INFO - layer 27 iter 6 loss:1.9995388984680176 norm:0.2040574699640274 max memory_allocated 5169.87255859375 
+2026-03-12 12:28:40,410 - INFO - layer 27 iter 7 loss:1.9995969533920288 norm:0.16076810657978058 max memory_allocated 5169.87255859375 
+2026-03-12 12:28:55,221 - INFO - layer 27 iter 8 loss:1.9994596242904663 norm:0.13719536364078522 max memory_allocated 5169.87255859375 
+2026-03-12 12:29:10,037 - INFO - layer 27 iter 9 loss:1.99917471408844 norm:0.2321600317955017 max memory_allocated 5169.87255859375 
+2026-03-12 12:29:11,765 - INFO - Layer 27 weight stats - mean: 0.0000, std: 0.2416, unique values: 2251
+2026-03-12 12:29:12,161 - INFO - Processing Layer 28...
+2026-03-12 12:29:30,075 - INFO - layer 28 iter 0 loss:2.795327663421631 norm:0.0015448235208168626 max memory_allocated 5170.66943359375 
+2026-03-12 12:29:44,881 - INFO - layer 28 iter 1 loss:2.0103847980499268 norm:0.0020797327160835266 max memory_allocated 5170.66943359375 
+2026-03-12 12:29:59,597 - INFO - layer 28 iter 2 loss:2.0022358894348145 norm:0.026807622984051704 max memory_allocated 5170.66943359375 
+2026-03-12 12:30:14,228 - INFO - layer 28 iter 3 loss:2.001598834991455 norm:0.03302553668618202 max memory_allocated 5170.66943359375 
+2026-03-12 12:30:28,526 - INFO - layer 28 iter 4 loss:2.001385450363159 norm:0.10944873094558716 max memory_allocated 5170.66943359375 
+2026-03-12 12:30:43,032 - INFO - layer 28 iter 5 loss:1.9993990659713745 norm:0.1377151757478714 max memory_allocated 5170.66943359375 
+2026-03-12 12:30:57,713 - INFO - layer 28 iter 6 loss:1.9997540712356567 norm:0.17288991808891296 max memory_allocated 5170.66943359375 
+2026-03-12 12:31:12,403 - INFO - layer 28 iter 7 loss:1.9990822076797485 norm:0.2022431641817093 max memory_allocated 5170.66943359375 
+2026-03-12 12:31:27,124 - INFO - layer 28 iter 8 loss:1.999688982963562 norm:0.15596067905426025 max memory_allocated 5170.66943359375 
+2026-03-12 12:31:41,775 - INFO - layer 28 iter 9 loss:1.9993371963500977 norm:0.12758387625217438 max memory_allocated 5170.66943359375 
+2026-03-12 12:31:43,524 - INFO - Layer 28 weight stats - mean: -0.0000, std: 0.1886, unique values: 2282
+2026-03-12 12:31:43,918 - INFO - Processing Layer 29...
+2026-03-12 12:32:01,712 - INFO - layer 29 iter 0 loss:2.817558526992798 norm:0.0016279502306133509 max memory_allocated 5170.66943359375 
+2026-03-12 12:32:16,495 - INFO - layer 29 iter 1 loss:2.010835886001587 norm:0.001283812103793025 max memory_allocated 5170.66943359375 
+2026-03-12 12:32:31,215 - INFO - layer 29 iter 2 loss:2.002770185470581 norm:0.06339753419160843 max memory_allocated 5170.66943359375 
+2026-03-12 12:32:46,176 - INFO - layer 29 iter 3 loss:2.0020930767059326 norm:0.10308054089546204 max memory_allocated 5170.66943359375 
+2026-03-12 12:33:00,905 - INFO - layer 29 iter 4 loss:2.0009405612945557 norm:0.2419033646583557 max memory_allocated 5170.66943359375 
+2026-03-12 12:33:15,707 - INFO - layer 29 iter 5 loss:1.9995826482772827 norm:0.2055581510066986 max memory_allocated 5170.66943359375 
+2026-03-12 12:33:30,432 - INFO - layer 29 iter 6 loss:1.9995508193969727 norm:0.16936138272285461 max memory_allocated 5170.66943359375 
+2026-03-12 12:33:44,987 - INFO - layer 29 iter 7 loss:1.9992998838424683 norm:0.2059173882007599 max memory_allocated 5170.66943359375 
+2026-03-12 12:33:59,843 - INFO - layer 29 iter 8 loss:1.9991477727890015 norm:0.21690680086612701 max memory_allocated 5170.66943359375 
+2026-03-12 12:34:14,471 - INFO - layer 29 iter 9 loss:1.9992787837982178 norm:0.17599710822105408 max memory_allocated 5170.66943359375 
+2026-03-12 12:34:16,185 - INFO - Layer 29 weight stats - mean: -0.0001, std: 0.1812, unique values: 2068
+2026-03-12 12:34:16,514 - INFO - Processing Layer 30...
+2026-03-12 12:34:34,487 - INFO - layer 30 iter 0 loss:3.3117659091949463 norm:nan max memory_allocated 5171.46630859375 
+2026-03-12 12:34:49,134 - INFO - layer 30 iter 1 loss:1.9589800834655762 norm:0.005353575572371483 max memory_allocated 5171.46630859375 
+2026-03-12 12:35:03,766 - INFO - layer 30 iter 2 loss:1.987720012664795 norm:0.0033866933081299067 max memory_allocated 5171.46630859375 
+2026-03-12 12:35:18,547 - INFO - layer 30 iter 3 loss:1.9989542961120605 norm:0.0017174166860058904 max memory_allocated 5171.46630859375 
+2026-03-12 12:35:33,354 - INFO - layer 30 iter 4 loss:1.9928398132324219 norm:0.001231021829880774 max memory_allocated 5171.46630859375 
+2026-03-12 12:35:48,053 - INFO - layer 30 iter 5 loss:1.9857373237609863 norm:0.0008982548024505377 max memory_allocated 5171.46630859375 
+2026-03-12 12:36:02,853 - INFO - layer 30 iter 6 loss:1.9813481569290161 norm:0.0010087777627632022 max memory_allocated 5171.46630859375 
+2026-03-12 12:36:17,539 - INFO - layer 30 iter 7 loss:1.9797861576080322 norm:0.0013855567667633295 max memory_allocated 5171.46630859375 
+2026-03-12 12:36:32,295 - INFO - layer 30 iter 8 loss:1.9786933660507202 norm:0.0013695529196411371 max memory_allocated 5171.46630859375 
+2026-03-12 12:36:46,949 - INFO - layer 30 iter 9 loss:1.978380799293518 norm:0.050365254282951355 max memory_allocated 5171.46630859375 
+2026-03-12 12:36:48,677 - INFO - Layer 30 weight stats - mean: -0.0000, std: 0.0246, unique values: 2355
+2026-03-12 12:36:49,088 - INFO - Processing Layer 31...
+2026-03-12 12:37:06,966 - INFO - layer 31 iter 0 loss:3.386103868484497 norm:0.009385235607624054 max memory_allocated 5171.46630859375 
+2026-03-12 12:37:21,675 - INFO - layer 31 iter 1 loss:2.0074594020843506 norm:0.006601836998015642 max memory_allocated 5171.46630859375 
+2026-03-12 12:37:36,518 - INFO - layer 31 iter 2 loss:1.9908353090286255 norm:0.01315345149487257 max memory_allocated 5171.46630859375 
+2026-03-12 12:37:51,089 - INFO - layer 31 iter 3 loss:1.9817525148391724 norm:0.13839483261108398 max memory_allocated 5171.46630859375 
+2026-03-12 12:38:05,737 - INFO - layer 31 iter 4 loss:1.9777058362960815 norm:0.19966265559196472 max memory_allocated 5171.46630859375 
+2026-03-12 12:38:20,521 - INFO - layer 31 iter 5 loss:1.9767258167266846 norm:0.05042053759098053 max memory_allocated 5171.46630859375 
+2026-03-12 12:38:35,223 - INFO - layer 31 iter 6 loss:1.9777880907058716 norm:0.1480228155851364 max memory_allocated 5171.46630859375 
+2026-03-12 12:38:49,966 - INFO - layer 31 iter 7 loss:1.976231336593628 norm:0.4765162765979767 max memory_allocated 5171.46630859375 
+2026-03-12 12:39:04,648 - INFO - layer 31 iter 8 loss:1.9827407598495483 norm:0.691181480884552 max memory_allocated 5171.46630859375 
+2026-03-12 12:39:19,361 - INFO - layer 31 iter 9 loss:1.974878191947937 norm:3.0421574115753174 max memory_allocated 5171.46630859375 
+2026-03-12 12:39:21,075 - INFO - Layer 31 weight stats - mean: 0.0000, std: 0.0392, unique values: 1859
+2026-03-12 13:42:52,879 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-03-12 13:42:53,141 - INFO - HTTP Request: HEAD https://huggingface.co/meta-llama/Llama-2-7b-hf/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-12 13:42:53,392 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-12 13:42:53,638 - INFO - HTTP Request: GET https://huggingface.co/api/models/meta-llama/Llama-2-7b-hf/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-12 13:44:45,304 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:44:45,564 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:44:45,620 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 13:44:45,901 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:44:46,166 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 13:44:47,243 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 13:44:47,555 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:44:47,809 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 13:44:49,400 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 13:44:49,648 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:44:49,897 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 13:54:40,862 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:54:41,093 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:54:41,127 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 13:54:41,372 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:54:41,625 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 13:54:42,595 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 13:54:42,857 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:54:43,096 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 13:54:44,583 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 13:54:44,848 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:54:45,084 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 13:56:09,285 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:56:09,525 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:56:09,565 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 13:56:09,806 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:56:10,053 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 13:56:10,973 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 13:56:11,231 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:56:11,502 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 13:56:13,166 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 13:56:13,450 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:56:13,687 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 13:57:46,935 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:57:47,174 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:57:47,217 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 13:57:47,464 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:57:47,708 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 13:57:48,682 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 13:57:48,955 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:57:49,216 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 13:57:51,997 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 13:57:52,278 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 13:57:52,528 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:01:40,033 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:01:40,290 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:01:40,332 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:01:40,575 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:01:40,818 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:01:41,728 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:01:42,011 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:01:42,246 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:01:43,773 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 14:01:44,054 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:01:44,364 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:08:53,028 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:08:53,340 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:08:53,412 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:08:53,692 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:08:54,009 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:08:55,139 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:08:55,429 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:08:55,709 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:08:57,316 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 14:08:57,604 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:08:57,877 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:09:12,019 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:09:12,283 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:09:12,344 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:09:12,622 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:09:12,891 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:09:14,028 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:09:14,318 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:09:14,579 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:09:16,234 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 14:09:16,568 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:09:16,842 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:11:30,138 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:11:30,384 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:11:30,433 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:11:30,676 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:11:30,918 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:11:31,907 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:11:32,173 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:11:32,430 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:11:35,062 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:11:35,322 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:13:36,857 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:13:37,093 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:13:37,123 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:13:37,357 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:13:37,587 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:13:38,496 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:13:38,829 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:13:39,057 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:13:40,599 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 14:13:40,870 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:13:41,102 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:22:25,575 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:22:25,832 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:22:25,868 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:22:26,115 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:22:26,353 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:22:27,333 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:22:27,580 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:22:27,835 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:22:29,350 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 14:22:29,626 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:22:29,856 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:23:44,816 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:23:45,061 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:23:45,090 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:23:45,334 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:23:45,579 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:23:46,499 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:23:46,756 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:23:46,986 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:23:49,551 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:23:49,778 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:25:01,449 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:01,704 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:01,743 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:25:01,991 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:02,230 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:25:03,152 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:25:03,437 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:03,693 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:25:06,344 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:06,598 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 14:25:22,974 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:23,212 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:23,245 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 14:25:23,480 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:23,719 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 14:25:24,631 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 14:25:24,914 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:25,165 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 14:25:27,743 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 14:25:27,976 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 15:22:57,156 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:22:57,392 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:22:57,431 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 15:22:57,694 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:22:57,925 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 15:22:58,834 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 15:22:59,117 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:22:59,348 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 15:23:01,947 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:23:02,195 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 15:32:23,565 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:32:23,808 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:32:23,836 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 15:32:24,088 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:32:24,318 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 15:32:25,234 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 15:32:25,511 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:32:25,758 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 15:32:28,331 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:32:28,557 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 15:42:16,888 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:42:17,180 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:42:17,215 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 15:42:17,446 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:42:17,675 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 15:42:18,630 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 15:42:18,887 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:42:19,127 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 15:42:20,653 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-03-12 15:42:20,933 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:42:21,179 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-12 15:47:02,834 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:47:03,075 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:47:03,114 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-03-12 15:47:03,358 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:47:03,624 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-03-12 15:47:04,552 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-03-12 15:47:04,831 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:47:05,070 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-12 15:47:07,652 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-12 15:47:07,921 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
