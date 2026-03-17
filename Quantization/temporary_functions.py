@@ -8,6 +8,7 @@ class TruncateFunction(torch.autograd.Function):
     def forward(ctx, input, threshold):
         truncated_tensor = input.clone()
         truncated_tensor[truncated_tensor.abs() < threshold] = truncated_tensor[truncated_tensor.abs() < threshold].sign() * threshold
+        
         return truncated_tensor
         
 
@@ -22,6 +23,10 @@ def truncate_number(number, threshold=1e-2):
 
 
 def smooth_ln_fcs_temporary(ln, fcs, scales, shifts):
+    if (scales <= 0).any():
+        print(f"CRITICAL ERROR: Negative or Zero scale detected! Min: {scales.min()}")
+        # You can force absolute values to recover, though root cause should be found
+        scales = scales.abs().clamp(min=1e-5)
     ln.use_temporary_parameter = True
     if not isinstance(fcs, list):
         fcs = [fcs]
@@ -38,11 +43,15 @@ def smooth_ln_fcs_temporary(ln, fcs, scales, shifts):
         if hasattr(fc, 'bias') and fc.bias is not None:
             fc.temp_bias = fc.bias + fc.weight@shifts
         else:
-            fc.temp_bias = fc.weight@shifts.to(fc.weight.dtype)
+            fc.temp_bias = fc.weight@shifts
         fc.temp_weight = fc.weight * scales.view(1,-1)
 
 
 def smooth_fc_fc_temporary(fc1, fc2, scales,shifts=None):
+    if (scales <= 0).any():
+        print(f"CRITICAL ERROR: Negative or Zero scale detected! Min: {scales.min()}")
+        # You can force absolute values to recover, though root cause should be found
+        scales = scales.abs().clamp(min=1e-5)
     # only support for v_proj and out_proh now.
     fc1.use_temporary_parameter = True
     fc2.use_temporary_parameter = True
@@ -58,11 +67,15 @@ def smooth_fc_fc_temporary(fc1, fc2, scales,shifts=None):
     if hasattr(fc2, 'bias') and fc2.bias is not None:
         fc2.temp_bias = fc2.bias + fc2.weight@shifts
     else:
-        fc2.temp_bias = fc2.weight@shifts.to(fc2.weight.dtype)
+        fc2.temp_bias = fc2.weight@shifts
     fc2.temp_weight = fc2.weight * scales.view(1,-1)
 
 
 def smooth_q_k_temporary(q_proj, k_proj, scales):
+    if (scales <= 0).any():
+        print(f"CRITICAL ERROR: Negative or Zero scale detected! Min: {scales.min()}")
+        # You can force absolute values to recover, though root cause should be found
+        scales = scales.abs().clamp(min=1e-5)
     q_proj.use_temporary_parameter = True
     k_proj.use_temporary_parameter = True
 
@@ -74,11 +87,14 @@ def smooth_q_k_temporary(q_proj, k_proj, scales):
     k_proj.temp_bias = k_proj.temp_bias*scales.view(-1)
 
 def smooth_ln_fcs_inplace(ln, fcs, scales,shifts):
+    if (scales <= 0).any():
+        print(f"CRITICAL ERROR: Negative or Zero scale detected! Min: {scales.min()}")
+        # You can force absolute values to recover, though root cause should be found
+        scales = scales.abs().clamp(min=1e-5)
     ln.use_temporary_parameter = False
     if not isinstance(fcs, list):
         fcs = [fcs]
-    shifts = shifts.to(ln.weight.dtype)
-    scales = scales.to(ln.weight.dtype)
+  
     # scales = cal_log_scales(scales, weight, act)
 
     if hasattr(ln, 'bias') and ln.bias is not None:
@@ -92,46 +108,46 @@ def smooth_ln_fcs_inplace(ln, fcs, scales,shifts):
     ln.weight.div_(scales)
     for fc in fcs:
         fc.use_temporary_parameter = False
-        cur_shifts = shifts.to(fc.weight.dtype)
-        cur_scales = scales.to(fc.weight.dtype)
+        # cur_shifts = shifts.to(fc.weight.dtype)
+        # cur_scales = scales.to(fc.weight.dtype)
         if hasattr(fc, 'bias') and fc.bias is not None:
-            fc.bias.add_(fc.weight@cur_shifts)
+            fc.bias.add_(fc.weight@shifts)
         else:
             del fc.bias
-            fc.register_buffer('bias',fc.weight@cur_shifts)
-        fc.weight.mul_(cur_scales.view(1,-1))
+            fc.register_buffer('bias',fc.weight@shifts)
+        fc.weight.mul_(scales.view(1,-1))
 
 
 def smooth_fc_fc_inplace(fc1, fc2, scales, shifts=None):
     # only support for v_proj and out_proh now.
     fc1.use_temporary_parameter = False
     fc2.use_temporary_parameter = False
-    cur_shifts = shifts.to(fc1.weight.dtype)
-    cur_scales = scales.to(fc1.weight.dtype)
+    # cur_shifts = shifts.to(fc1.weight.dtype)
+    # cur_scales = scales.to(fc1.weight.dtype)
     # scales = cal_log_scales(scales, weight, act)
 
-    fc1.bias.sub_(cur_shifts)
-    fc1.bias.div_(cur_scales.view(-1))
-    fc1.weight.div_(cur_scales.view(-1,1))
+    fc1.bias.sub_(shifts)
+    fc1.bias.div_(scales.view(-1))
+    fc1.weight.div_(scales.view(-1,1))
     
     if hasattr(fc2, 'bias') and fc2.bias is not None:
-        fc2.bias.add_(fc2.weight@cur_shifts)
+        fc2.bias.add_(fc2.weight@shifts)
     else:
         del fc2.bias
-        fc2.register_buffer('bias',fc2.weight@cur_shifts)
-    fc2.weight.mul_(cur_scales.view(1,-1))
+        fc2.register_buffer('bias',fc2.weight@shifts)
+    fc2.weight.mul_(scales.view(1,-1))
 
 def smooth_q_k_inplace(q_proj, k_proj, scales):
     q_proj.use_temporary_parameter = False
     k_proj.use_temporary_parameter = False
     
-    cur_scales = scales.to(q_proj.weight.dtype)
+    # cur_scales = scales.to(q_proj.weight.dtype)
     # scales = cal_log_scales(scales, act)
 
-    q_proj.weight.div_(cur_scales.view(-1,1))
-    q_proj.bias.div_(cur_scales.view(-1))
-    k_proj.weight.mul_(cur_scales.view(-1,1))
-    k_proj.bias.mul_(cur_scales.view(-1))
+    q_proj.weight.div_(scales.view(-1,1))
+    q_proj.bias.div_(scales.view(-1))
+    k_proj.weight.mul_(scales.view(-1,1))
+    k_proj.bias.mul_(scales.view(-1))
 
 # tta shift
 
